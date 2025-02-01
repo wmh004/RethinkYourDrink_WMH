@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".RecordActivity"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    android:background="@drawable/background"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/TVSetDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/SPDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/TVSetBeverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Beverage Category"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/SPBeverage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/TVSetAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount (ml)"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/ETAmount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:hint="Set Amount in milliliters (ml)"
+            android:textSize="17sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/TVSetDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/ETDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@color/black"
+            android:textColorHint="@android:color/darker_gray"
+            android:hint="Add your description here"
+            android:textSize="17sp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/BtnSave"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+</LinearLayout>

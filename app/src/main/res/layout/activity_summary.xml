@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Drinks Summary"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/TVTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total Amount of Drinks (3 days)"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:paddingStart="20dp"/>
+
+            <TextView
+                android:id="@+id/TVDisplayTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total: "
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:paddingStart="20dp"
+                android:background="@drawable/background" />
+
+            <TextView
+                android:id="@+id/TVEach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total Amount of Drinks for Each Day"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:paddingStart="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <TextView
+                android:id="@+id/TVDisplayDay1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background"
+                android:paddingStart="20dp"
+                android:text="Day 1: "
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/TVDisplayDay2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Day 2: "
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:paddingStart="20dp"
+                android:background="@drawable/background"/>
+
+            <TextView
+                android:id="@+id/TVDisplayDay3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Day 3: "
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:paddingStart="20dp"
+                android:background="@drawable/background" />
+
+            <TextView
+                android:id="@+id/TVList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="List of Drinks Taken"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:paddingStart="20dp"
+                android:layout_marginTop="20dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                tools:listitem="@layout/individual_item" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
