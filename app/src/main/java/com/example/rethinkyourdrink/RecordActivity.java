@@ -13,17 +13,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
+
+import com.example.rethinkyourdrink.DB.ActivityViewModel;
 
 public class RecordActivity extends AppCompatActivity {
     private Spinner SPDay, SPBeverage;
-    private EditText ETDescription;
-    private EditText ETAmount;
+    private EditText ETDescription, ETAmount;
+    private ActivityViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_record);
+
+        // Initialize ViewModel
+        viewModel = new ViewModelProvider(this).get(ActivityViewModel.class);
 
         SPDay = findViewById(R.id.SPDay);
         ArrayAdapter<CharSequence> adapterDay = ArrayAdapter.createFromResource(
@@ -53,16 +59,12 @@ public class RecordActivity extends AppCompatActivity {
                 return;
             }
 
-            // Pass data back to MainActivity
-            Intent resultIntent = new Intent();
-            resultIntent.putExtra("day", selectedDay);
-            resultIntent.putExtra("beverage", selectedBeverage);
-            resultIntent.putExtra("amount", amount);
-            resultIntent.putExtra("description", description);
+            ActivityClass activity = new ActivityClass(selectedDay, selectedBeverage, amount, description);
+            viewModel.insert(activity);
 
-            setResult(RESULT_OK, resultIntent);
             finish();
         });
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

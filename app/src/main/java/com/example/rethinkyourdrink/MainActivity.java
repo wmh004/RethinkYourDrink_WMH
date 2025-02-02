@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         Button BtnRecordActivity = findViewById(R.id.BtnRecordActivity);
         BtnRecordActivity.setOnClickListener(view -> {
             Intent record = new Intent(MainActivity.this, RecordActivity.class);
-            startActivityForResult(record, RECORD_ACTIVITY_REQUEST_CODE);
+            startActivity(record);
         });
 
         // Navigate to SummaryActivity
@@ -100,26 +100,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == RECORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            // Extract data from the intent returned by RecordActivity
-            String day = data.getStringExtra("day");
-            String beverage = data.getStringExtra("beverage");
-            String amount = data.getStringExtra("amount");
-            String description = data.getStringExtra("description");
-
-            // Create an ActivityClass object with the received data
-            ActivityClass activity = new ActivityClass(day, beverage, amount, description);
-
-            // Insert the activity into the database via ViewModel
-            viewModel.insert(activity);
-        }
-    }
-
-
 }
 
