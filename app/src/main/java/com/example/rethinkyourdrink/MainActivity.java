@@ -20,7 +20,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.rethinkyourdrink.DB.ActivityViewModel;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int RECORD_ACTIVITY_REQUEST_CODE = 1;
     private Spinner SPSelectDay;
     private TextView TVDisplayEachDay;
     private ActivityViewModel viewModel;
@@ -94,9 +93,9 @@ public class MainActivity extends AppCompatActivity {
     private void observeDayData(LiveData<Integer> liveData) {
         liveData.observe(this, count -> {
             if (count != null) {
-                TVDisplayEachDay.setText("Total Drinks Recorded: " + count);
+                TVDisplayEachDay.setText("" + count);
             } else {
-                TVDisplayEachDay.setText("No data available");
+                TVDisplayEachDay.setText("/");
             }
         });
     }

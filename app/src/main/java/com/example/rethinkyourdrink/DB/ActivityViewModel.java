@@ -55,4 +55,8 @@ public class ActivityViewModel extends AndroidViewModel {
     public void insert(ActivityClass activity) {
         repo.insert(activity);
     }
+
+    public void update(ActivityClass activity) {
+        repo.update(activity);
+    }
 }

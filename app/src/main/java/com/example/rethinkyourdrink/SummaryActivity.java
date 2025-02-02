@@ -1,6 +1,5 @@
 package com.example.rethinkyourdrink;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
@@ -17,10 +16,7 @@ import java.util.ArrayList;
 public class SummaryActivity extends AppCompatActivity {
     private ActivityAdapter adapter;
     private RecyclerView recyclerView;
-    private TextView TVDisplayTotal;
-    private TextView TVDisplayDay1;
-    private TextView TVDisplayDay2;
-    private TextView TVDisplayDay3;
+    private TextView TVDisplayTotal, TVDisplayDay1, TVDisplayDay2, TVDisplayDay3;
     private ActivityViewModel viewModel;
 
     @Override
@@ -53,19 +49,19 @@ public class SummaryActivity extends AppCompatActivity {
 
         // Observe numerical data and update TextViews
         viewModel.getDataDay1().observe(this, day1 -> {
-            TVDisplayDay1.setText("Day 1: " + day1);
+            TVDisplayDay1.setText("" + day1);
         });
 
         viewModel.getDataDay2().observe(this, day2 -> {
-            TVDisplayDay2.setText("Day 2: " + day2);
+            TVDisplayDay2.setText("" + day2);
         });
 
         viewModel.getDataDay3().observe(this, day3 -> {
-            TVDisplayDay3.setText("Day 3: " + day3);
+            TVDisplayDay3.setText("" + day3);
         });
 
         viewModel.getTotal().observe(this, total -> {
-            TVDisplayTotal.setText("Total: " + total);
+            TVDisplayTotal.setText("" + total);
         });
 
         // Handle system insets

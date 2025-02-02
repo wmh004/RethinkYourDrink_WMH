@@ -48,4 +48,9 @@ public class Repository {
         });
     }
 
+    void update(ActivityClass activity) {
+        RoomDatabases.databaseWriteExecutor.execute(() -> {
+            dao.update(activity);
+        });
+    }
 }
