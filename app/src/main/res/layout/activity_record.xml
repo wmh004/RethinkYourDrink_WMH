@@ -4,12 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".RecordActivity"
     android:orientation="vertical"
-    android:layout_gravity="center_vertical"
-    android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp">
+    android:layout_gravity="center_vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/TBMainAct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="#800080"
+        android:minHeight="?attr/actionBarSize"
+        android:paddingStart="30dp"
+        app:title="Record Drinks"
+        app:titleTextColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <LinearLayout
@@ -144,7 +157,7 @@
             android:text="Back"
             android:textColor="@color/white"
             android:textSize="25sp"
-            android:backgroundTint="#B19CD7"
+            android:backgroundTint="@color/soft_purple"
             android:layout_marginEnd="20dp"
             app:cornerRadius="20dp"/>
 

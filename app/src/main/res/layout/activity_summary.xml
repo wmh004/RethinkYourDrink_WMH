@@ -7,26 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/TBMainAct"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="Drinks Summary"
-        android:textColor="@color/black"
-        android:textSize="40sp"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="#800080"
+        android:minHeight="?attr/actionBarSize"
+        android:paddingStart="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Drinks Summary"
+        app:titleTextColor="@color/white" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,82 +39,116 @@
                 android:id="@+id/TVTotal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Total Amount of Drinks (3 days)"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:text="Total Amount of Drinks (3 days)"
                 android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TVDisplayTotal"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:text="0"
-                android:textSize="100sp"
-                android:textColor="@color/black"
                 android:layout_gravity="center"
-                android:gravity="center"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/oval_bg"
-                android:layout_marginTop="10dp"/>
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="100sp" />
 
             <TextView
                 android:id="@+id/TVEach"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Total Amount of Drinks for Each Day"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:text="Total Amount of Drinks for Each Day"
                 android:textColor="@color/black"
+                android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/TV1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Day 1"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TVDisplayDay1"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:text="0"
-                android:textSize="100sp"
-                android:textColor="@color/black"
                 android:layout_gravity="center"
-                android:gravity="center"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/oval_bg"
-                android:layout_marginTop="10dp" />
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="100sp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/TV2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Day 2"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TVDisplayDay2"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:text="0"
-                android:textSize="100sp"
-                android:textColor="@color/black"
                 android:layout_gravity="center"
-                android:gravity="center"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/oval_bg"
                 android:backgroundTint="#B19CD7"
-                android:layout_marginTop="10dp"/>
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="100sp"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/TV3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Day 3"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TVDisplayDay3"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:text="0"
-                android:textSize="100sp"
-                android:textColor="@color/black"
                 android:layout_gravity="center"
-                android:gravity="center"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/oval_bg"
-                android:layout_marginTop="10dp" />
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="100sp"
+                android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:id="@+id/TVList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="List of Drinks Taken"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:text="List of Drinks Taken"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-                android:layout_marginTop="20dp"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
