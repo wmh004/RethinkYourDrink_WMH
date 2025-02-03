@@ -35,16 +35,16 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.TBMainAct);
         setSupportActionBar(toolbar);
 
-        SPSelectDay = findViewById(R.id.SPSelectDay);
+        // Initialize ViewModel
+        viewModel = new ViewModelProvider(this).get(ActivityViewModel.class);
+
         TVDisplayEachDay = findViewById(R.id.TVDisplayEachDay);
 
+        SPSelectDay = findViewById(R.id.SPSelectDay);
         ArrayAdapter<CharSequence> adapterDay = ArrayAdapter.createFromResource(
                 this, R.array.DaySlots, android.R.layout.simple_spinner_item);
         adapterDay.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         SPSelectDay.setAdapter(adapterDay);
-
-        // Initialize ViewModel
-        viewModel = new ViewModelProvider(this).get(ActivityViewModel.class);
 
         SPSelectDay.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -63,14 +63,14 @@ public class MainActivity extends AppCompatActivity {
                         observeDayData(viewModel.getDataDay3());
                         break;
                     default:
-                        TVDisplayEachDay.setText("No data available");
+                        TVDisplayEachDay.setText("/");
                         break;
                 }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-                TVDisplayEachDay.setText("");
+                TVDisplayEachDay.setText("//");
             }
         });
 
