@@ -154,7 +154,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Back"
+            android:text="Save"
             android:textColor="@color/white"
             android:textSize="25sp"
             android:backgroundTint="@color/soft_purple"
